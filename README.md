@@ -13,10 +13,10 @@ Before you can run this client, you will need to be running the server side whic
 cd snek-multiplayer
 
 # install and run via npm
-npm install
+npm install, 
 npm run play
 
-Then clone the snake-client from here https://github.com/Datazyme/snake-client
+Then clone the snake-client from this repository (https://github.com/Datazyme/snake-client)
 cd snake-client
 node play.js to run
 
