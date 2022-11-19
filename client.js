@@ -1,12 +1,15 @@
 // This has to stay here for the reference in code
 const net = require("net");
+//calls from constants.js
+const { host, port } = require("./constants");
 // function that connects to server, server port entered
 const connect = function () {
+  //must name it host and port for below function to work, IP and PORT does not work
   const conn = net.createConnection({
-    host: "localhost",
-    port: 50541,
+    host, 
+    port, 
   });
-
+ 
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
