@@ -12,29 +12,9 @@ const connect = function () {
 
   //notifies connection has been made and adds name to server
   conn.on("connect", () => {
-    console.log("Successfully connected to game server")
-    conn.write("Name: AKA");
-    conn.write("Move: up");
-    conn.write("Move: up");
-    conn.write("Move: up");
-    conn.write("Move: up");
-    for (i = 0; i < 5000;) {
-      time = i + 500
-      setTimeout(() => {        
-        conn.write("Move: up");
-      }, time);
-    }
- 
-
+    console.log("Successfully connected to game server");
+    conn.write("Name: AKA"); 
   });
-
-  // conn.on("connect", () => {
-  //   conn.write("Move: up")
-  // });
-
-  // conn.on("connect", () => {
-  //   conn.write("Move: up")
-  // });
 
   //consoles communication from server
   conn.on("data", (data) => {
@@ -45,7 +25,8 @@ const connect = function () {
 }
 module.exports = {
   connect,
-}
+};
 
-// changing to ES6 shorthand
+          
+
 
