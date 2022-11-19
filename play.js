@@ -1,21 +1,9 @@
 // using ES6 shorthand with "connect" being the entire function in client.js
-console.log("Connecting ...");
-const {connect} = require("./client.js")
-connect();
+const {connect} = require("./client.js");
+//called from input.js, function that takes in user input and sends to server 
+const {setupInput} = require("./input.js");
 
-// setup interface to handle user input from stdin
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", handleUserInput);
-  return stdin;
-};
-const handleUserInput = function(data) {
-  // \u0003 maps to ctrl+c input
-  if (data === '\u0003') {
-   process.exit();
-  }
-};
-setupInput();
+console.log("Connecting ...");
+
+//calls connect from client.js into setupInput from input.js
+setupInput(connect());
